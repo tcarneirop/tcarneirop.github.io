@@ -1,184 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>Tiago Carneiro</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<head>
     <style>
-  .fakeimg {
-    height: 200px;
-    background: #aaa;
-  }
-      
-      .img-container {
-        text-align: center;
-        display: block;
-      }
-    
-  </style>
+    .black-link {
+      color: #000 !important; /* This sets the link color to black */
+    }
+    .black-link:hover {
+      color: #333 !important; /* Optional: A slightly lighter shade on hover */
+    }
+    </style>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Tiago Carneiro - Parallel & Distributed Algorithms, GPU Computing, Optimization</title>
+
+    <meta name="description" content="Official academic homepage of Tiago Carneiro, researcher in parallel and distributed algorithms, GPU and heterogeneous computing, and combinatorial optimization.">
+
+    <meta name="author" content="Tiago Carneiro">
+
   </head>
+
   <body>
-    <div class="jumbotron text-center" style="margin-bottom:0">
-      <h1>Tiago Carneiro</h1>
-      <p>Parallel and distributed algorithms, GPU and heterogeneous computing,
-        combinatorial optimization, </p>
-    </div>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <button class="navbar-toggler"
-        type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span
-          class="navbar-toggler-icon"></span> </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item active"> <a class="nav-link" href="/index.html">Home</a>
-          </li>
-          <li class="nav-item"> <a class="nav-link" href="sites/projects.html">Projects</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="documents/CARNEIRO_Publications.pdf">Publications</a>
-          </li>
-          <li class="nav-item"> <a class="nav-link" href="documents/CARNEIRO_CV.pdf">Full
-              CV</a></li>
-          <li class="nav-item"> <a class="nav-link" href="documents/SHORT_CARNEIRO_CV.pdf">Short CV</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://github.com/tcarneirop">GitHub</a>
-          </li>
-          <li class="nav-item"> <a class="nav-link" href="https://scholar.google.com/citations?user=aHpFVBMAAAAJ&amp;hl=pt-BR">Google
-              Scholar</a></li>
-        </ul>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.1/css/academicons.min.css"/>  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      
+      <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1>Tiago Carneiro</h1>
+        <p>Parallel and distributed algorithms || GPU and heterogeneous computing ||
+          Combinatorial optimization </p>
       </div>
-    </nav>
-    <div class="container" style="margin-top:30px">
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="text-center"><br>
-            <h2>Chapel-based Optimization Project (ChOp)</h2>
-            <p><a href="https://hal.archives-ouvertes.fr/hal-03149394/">Download
-                the most recent paper</a>&nbsp; :: <a href="https://www.youtube.com/watch?v=QMGWFDHZEKw&amp;list=PLuqM5RJ2KYFjhqhtDtjD5nF93ZUcd1XvO&amp;index=10&amp;ab_channel=ChapelParallelProgrammingLanguage">Presentation
-                in The 8th Annual<br>
-                Chapel Implementers and Users Workshop</a> (<a href="https://chapel-lang.org/CHIUW2021.html">CHIUW
-                2021</a>) :: <a href="https://chapel-lang.org/poweredby.html">Powered
-                by Chapel</a> ::&nbsp; <a href="https://github.com/tcarneirop/ChOp">Github
-                repository </a></p>
-            <p><br>
-            </p>
-          </div>
-          <span class="img-container"> </span>
-          <p>The objective of the ChOp project to design and implement
-            large-scale distributed optimization algorithms taking into account
-            CPU-GPU heterogeneity, but also achieving high productivity and
-            parallel efficiency. The prototypes are programmed to enumerate all
-            feasible and complete configurations of the N-Queens. The final
-            versions of the distributed algorithms solve to the optimality&nbsp;
-            instances of combinatorial optimization problems, such as the
-            flow-shop scheduling and the ATSP. This study is pioneering within
-            the context of parallel exact optimization.</p>
-          <p><strong>Overview of the algorithm:</strong> The locale 0 (master)
-            is responsible for generating the distribute pool Pd and controlling
-            the search. Each worker locale receives nodes from the master and
-            generates a local pool that is partitioned into CPU and GPU
-            portions. L locales are launched on L-1 computer nodes. </p>
-          <p><br>
-          </p>
-          <p><span class="img-container"><img src="pictures/overview.png" alt=""
-                style="width: 533px; height: 373px;"><br>
-            </span></p>
-          <p><span class="img-container"><br>
-            </span></p>
-          <p><span class="img-container"></span><br>
-            <strong>Recent results, GPU-based prototype in Chapel + CUDA,
-              solving the N-Queens: </strong>288 NVIDIA V100, 48 computer
-            nodes. 84% of the linear speedup <em>vs.</em> the same application
-            on one computer node. 74% of the linear speedup <em>vs.</em> the
-            optimized baseline in CUDA on one computer node.&nbsp; <a href="https://hal.archives-ouvertes.fr/hal-03149394/">See
-              Carneiro et al. (2021).<br>
-            </a></p>
-          <p><br>
-            <span class="img-container"><img src="pictures/new.png" alt="" style="width: 499px; height: 295px;"></span></p>
-          <p><strong><br>
-            </strong></p>
-          <p><strong>Some productivity/performance results of using Chapel for
-              distributed exact optimization vs MPI+Cpp, flow-shop scheduling
-              problem</strong>: Execution times of Chapel-BB solving to the
-            optimality Taillard instances <em>ta21-30</em>. The execution time
-            is given relative to the MPI-PBB baseline. Next, normalized the
-            productivity achieved by Chapel compared to its counterpart written
-            in MPI+Cpp. Experiments executed on 1 (32 cores) to 32 nodes (<em>1024</em>
-            cores). For more details, see <a href="https://www.sciencedirect.com/science/article/pii/S0167739X1930946X">Carneiro
-              et al. (2020)</a>. <span class="img-container"><img src="pictures/performance.png"
-                alt="" style="width: 535px; height: 316px;"></span> </p>
-          <p><br>
-            <span class="img-container"><img src="pictures/prod.png" alt="" style="width: 535px; height: 316px;"></span></p>
-          <p><strong>Some productivity results of using Chapel for heuristic
-              optimization:</strong>Illustration of the trade-off between
-            relative cost and relative performance of three languages compared
-            to the reference one. In the graph, the arrows point to the desired
-            productivity region (DPR). The trade-off between relative cost and
-            relative performance of Chapel, Julia, and Python compared to the
-            reference implementation. In the graph, the desired productivity
-            region (DPR) is on point <strong>1.2.33</strong>. For more details,
-            see <a href="https://www.sciencedirect.com/science/article/pii/S2210650220303734">Gmys
-              et al. (2020)</a>.</p>
-          <p><br>
-          </p>
-          <p><span class="img-container"><img src="pictures/desired.png" alt=""
-                style="width: 478px; height: 283px;"><br>
-            </span></p>
-          <p><br>
-            <span class="img-container"></span></p>
-          <p><br>
-          </p>
-          <br>
-          <p></p>
-        </div>
-        <div class="col-sm-3">
-          <div class="text-center">
-            <h2>About Me</h2>
-            <img src="pictures/carneiro.jpg" alt="Tiago Carneiro" class="img-fluid"
-              width="80%"></div>
-          <div class="text-center"><br>
-          </div>
-          <p class="text-justify">I&nbsp; received&nbsp; my&nbsp; Master’s&nbsp;
-            degree&nbsp; in&nbsp; Computer&nbsp; Science&nbsp; from&nbsp;
-            the&nbsp; State&nbsp; University&nbsp; of&nbsp; Ceará&nbsp;
-            (Brazil)&nbsp; and&nbsp; my&nbsp; PhD&nbsp; in Computer&nbsp;
-            Science&nbsp; –&nbsp; with&nbsp; international&nbsp; mobility&nbsp;
-            at&nbsp; INRIA&nbsp; Lille&nbsp; (France)&nbsp; –&nbsp; from&nbsp;
-            the&nbsp; Federal&nbsp; University&nbsp; of&nbsp; Ceará
-            (Brazil).&nbsp;&nbsp; Since&nbsp; 2010,&nbsp; I&nbsp; research&nbsp;
-            different&nbsp; topics&nbsp; related&nbsp; to&nbsp; parallel&nbsp;
-            and&nbsp; distributed&nbsp; computing,&nbsp; mainly&nbsp; the&nbsp;
-            use&nbsp; of heterogeneous architectures for solving combinatorial
-            optimization problems.&nbsp; </p>
-          <p class="text-justify">Currently, I’m a research associate in the
-            Parallel Computing &amp; Optimization Group at the University of
-            Luxembourg.&nbsp; My research is focused on the use of
-            high-productivity languages for the design and implementation of
-            large-scale distributed heterogeneous algorithms.</p>
-          <p class="text-justify"><strong>Contact:</strong></p>
-          <p class="text-justify">+33 7 69 99 36 45</p>
-          <p class="text-justify">tcarneiropessoa@gmail.com</p>
-          <h3><br>
-          </h3>
-          <h3>Some news...</h3>
-          <p><br>
-          </p>
-          <p>-- I've got a paper recently published in&nbsp; <strong>Vehicular
-              Communications</strong>: <a href="https://www.sciencedirect.com/science/article/pii/S2214209621000589">A
-              Context-Oriented Framework for Computation Offloading in Vehicular
-              Edge Computing using WAVE and 5G Networks.&nbsp;</a></p>
-          <p>-- I received the<strong> Outstanding Paper Award</strong> from <a
-              href="http://hpcs2020.cisedu.info/"><strong>HPCS 2020</strong></a>
-            for the paper <a href="https://hal.archives-ouvertes.fr/hal-03149394/">Towards
-              Chapel-based Exascale Tree Search Algorithms: dealing with
-              multiple GPU accelerators. </a></p>
-          <ul class="nav nav-pills flex-column">
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <button class="navbar-toggler"
+          type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span
+            class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav justify-content-center w-100">
+
+
+            <li class="nav-item"> <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+             <li class="nav-item"> <a class="nav-link" href="documents/SHORT_CARNEIRO_CV.pdf"><i class="fa-solid fa-file-lines"></i> Short CV</a>
+            </li>
+            <li class="nav-item"> <a class="nav-link" href="documents/CARNEIRO_CV.pdf"><i class="fa-solid fa-address-card"></i> Academic CV</a></li>
+            <li class="nav-item"><a class="nav-link" href="documents/CARNEIRO_Publications.pdf"><i class="fa-solid fa-book"></i> Publications</a></li>
+            <li class="nav-item"><a class="nav-link" href="documents/CARNEIRO_Publications.pdf"><i class="fa-solid fa-microscope"></i> Research Summary</a></li>
+           
           </ul>
-          <hr class="d-sm-none"> </div>
+        </div>
+      </nav>
+    <div class="container" style="margin-top:30px;">
+          <div class="row">
+              <div class="col-sm-8">
+                  <h2>Welcome to my website!</h2>
+                  <p>Here you can find an overview of my research, keep up with my latest news and professional activities, and download my resume and academic CV. 
+                    Feel free to also connect with me via my social networks and professional profiles.</p>
+
+                  <hr> <h3><i class="fa-solid fa-newspaper"></i> Latest News</h3>
+                  <div class="mb-4"> <h5>[August 1, 2025]<a href="https://chapel-lang.org/blog/posts/7qs-chop/"> 7 Questions for Chapel Users - Interview Series</a></h5>
+                      <p>🚀 Excited to share that I had the opportunity to take part in the latest "7 Questions for Chapel Users" interview series, alongside my colleague and friend <a href="https://www.linkedin.com/in/guillaume-helbecque-4810b519a/">Guillaume Helbecque</a>!</p>
+                        
+                      <p>We talked about <a href="https://github.com/tcarneirop/ChOp">ChOp</a>, our Chapel-based Optimization project, our work on large-scale combinatorial optimization problems, and how Chapel helps us tackle these challenges efficiently and at scale.</p>
+                        
+                      <p>Many thanks to <a href="https://www.linkedin.com/in/brad-chamberlain-3ab358105/">Brad Chamberlain</a> and the whole Chapel team for the spotlight!</p>
+                      <p>See this post on Linkedin and on the <a href="https://chapel-lang.org/blog/posts/7qs-chop/">Chapel Language's Blog</a>.</p>
+                       <p><small>#HPC #Chapel #PGAS #Combinatorial Optimization #Parallel Computing #Research</small></p>
+                  </div>
+                  <div class="mb-4">
+                  <h5>[August 4, 2025]<a href="https://chapel-lang.org/chapelcon25/"> ChapelCon'25</a>!</h5>
+                      <p>I am glad to share that I have been invited to serve on the Program Committee for <a href="https://chapelcon.org/" target="_blank">ChapelCon'25</a>, the primary research and development meeting for the Chapel programming language community.</p>
+                      <p>ChapelCon ‘25 is free to attend and will be held virtually on October 7-10, 2025.</p>
+                      <p>See the <a href="http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=188767"> call for papers</a> for more information.</p>
+                  </div>
+                  
+                 <div class="mb-4">
+                  <h5>[March 20-21, 2025] Speaking at <a href="https://sites.google.com/view/ultrabo/events">2nd UltraBO Workshop</a></h5>
+                  <p>I'm participating in the <a href="https://sites.google.com/view/ultrabo/events">2nd UltraBO Workshop</a> (March 20-21, 2025), hosted by the University of Lille and the University of Luxembourg. I'll be giving an invited seminar titled "Investigating Portability in Chapel for Tree-Based Optimization on GPU-Powered Clusters."</p>
+                </div>
+
+                <div class="mb-4">
+                  <h5>[November 21, 2024] Invited Seminar at the University of Lille, France</h5>
+                  <p>Invited Seminar at the University of Lille, Title: <em>>Chapel-based Ultra-scale GPU-accelerated Optimization</em>.</p>
+                </div>
+                
+              <div class="mb-4">
+                <h5>[August 29, 2024] Paper Presented at Euro-Par 2024 in Madrid, Spain! 🎉</h5>
+                <p>Our paper, <a href="https://link.springer.com/chapter/10.1007/978-3-031-69583-4_27">Investigating Portability in Chapel for Tree-Based Optimization on GPU-Powered Clusters</a>,"</em> was presented at <a href="https://2024.euro-par.org/" target="_blank">Euro-Par 2024</a>, the prime European conference covering all aspects of parallel and distributed processing. This work was co-authored with E. Kayraklioglu, G. Helbecque, and G. Melab. 💻</p>
+                <p><small>The conference took place from August 26-30, 2024, in Madrid, Spain.</small></p>
+              </div>
+
+              <div class="mb-4">
+                <h5>[April 30, 2024] Paper Accepted for Euro-Par 2024 Main Track! 🎉</h5>
+                <p>Good news! Our paper, <em>"Investigating Portability in Chapel for Tree-Based Optimization on GPU-Powered Clusters,"</em> has been accepted for presentation in the Main Track of <a href="https://2024.euro-par.org/" target="_blank">Euro-Par 2024</a>, the prime European conference on parallel and distributed processing. This work was co-authored with E. Kayraklioglu, G. Helbecque, and G. Melab.</p>
+                <p><small>The conference takes place from August 26-30, 2024, in Madrid, Spain.</small></p>
+              </div>
+
+              </div>
+
+              <div class="col-sm-4">
+                  <div class="card">
+                      <div class="card-body">
+                          <h4 class="card-title">About Me:</h4>
+                            <p class="text-justify">I am a researcher and software engineer with a strong background in high-performance computing (HPC), distributed systems, and combinatorial optimization. I have extensive experience designing and implementing software
+                                 solutions that balance performance and productivity, leveraging technologies such as CUDA, OpenMP, MPI, and high-productivity languages like Chapel. 
+                            <p class="text-justify"> My work includes optimizing large-scale applications, collaborating with
+                                  interdisciplinary teams, and contributing to research through publications, workshops, and software development. I
+                                  am particularly focused on improving computational efficiency in large-scale systems.</p>
+                        </div>
+                
+                        <h4 class="text-center"><i class="fa-solid fa-share-nodes"></i> Find me online:</h4>
+                        <p class="lead text-center">
+                            <a href="https://www.linkedin.com/in/tcarneiropessoa" target="_blank" class="me-3 black-link" title="LinkedIn Profile">
+                                <i class="fa-brands fa-linkedin-in fa-2x"></i>
+                            </a>
+                            <a href="https://github.com/tcarneirop" target="_blank" class="me-3 black-link" title="GitHub Profile">
+                                <i class="fa-brands fa-github fa-2x"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=aHpFVBMAAAAJ&amp;hl=pt-BR" target="_blank" class="me-3 black-link" title="Google Scholar Profile">
+                                <i class="fa-solid fa-graduation-cap fa-2x"></i>
+                            </a>
+                            <a href="https://orcid.org/0000-0002-6145-8352" target="_blank" class="me-3 black-link" title="ORCID Profile">
+                                <i class="fa-brands fa-orcid fa-2x"></i>
+                            </a>
+                            <a href="https://www.webofscience.com/wos/author/record/J-3061-2019" target="_blank" class="me-3 black-link" title="Web of Science Profile">
+                                <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+                            </a>
+                            <a href="mailto:tcarneiropessoa@gmail.com" class="me-3 black-link" title="Email Tiago Carneiro">
+                                <i class="fa-solid fa-envelope fa-2x"></i>
+                            </a>
+                        </p>
+                  </div>
+              </div>
+          </div>
+      
       </div>
-    </div>
-    <div class="jumbotron text-center" style="margin-bottom:0">
-      <p>Last update on 11 Aug 2021</p>
-    </div>
+      </div>
+ <p style="text-align:center;">Last update on 6 Aug. 2025.</p>
+              
+          </div>
   </body>
 </html>
